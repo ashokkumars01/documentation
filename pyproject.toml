@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "your-project"
+version = "0.1.0"
+description = "Project with Sphinx docs"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.0"
+sphinx_rtd_theme = "^2.0"
+myst-parser = "^2.0"
+poethepoet = "^0.24"
+
+
+[tool.poe.tasks]
+docs = "sphinx-build docs output"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
