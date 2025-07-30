@@ -9,8 +9,10 @@ python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 sphinx = "^7.0"
-myst-parser = "^2.0"  # Enables Markdown support in Sphinx
+sphinx_rtd_theme = "^2.0"
+myst-parser = "^2.0"
 poethepoet = "^0.24"
+
 
 [tool.poe.tasks]
 docs = "sphinx-build docs output"
