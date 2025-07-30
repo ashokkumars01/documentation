@@ -35,8 +35,8 @@ jobs:
         run: |
           RELEASE_VERSION=${GITHUB_REF#refs/tags/}
           poetry run poe docs
-          mkdir -p versioned_docs/${RELEASE_TAG}
-          cp -r output/* versioned_docs/${RELEASE_TAG}/
+          mkdir -p versioned_docs/${RELEASE_VERSION}
+          cp -r output/* versioned_docs/${RELEASE_VERSION}/
 
       - name: Deploy to GitHub Pages (gh-pages branch)
         uses: peaceiris/actions-gh-pages@v4
