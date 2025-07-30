@@ -1,6 +1,7 @@
 name: Build and Deploy Docs on Release
 
 on:
+  push:
   release:
     types: [published]
 
