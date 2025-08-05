@@ -14,6 +14,7 @@ extensions = [
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+master_doc = 'index'  # default, must point to the right file
 
 # Theme
 html_theme = 'furo'
@@ -23,7 +24,7 @@ html_static_path = ['_static']
 
 # For versioning
 smv_tag_whitelist = r'^v\d+\.\d+\.\d+$'
-smv_branch_whitelist = r'^main$'
+smv_branch_whitelist = r'^master$'
 smv_remote_whitelist = r'^origin$'
 smv_released_pattern = r'^tags/v\d+\.\d+\.\d+$'
 smv_latest_version = 'v1.0.0'
