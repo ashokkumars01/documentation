@@ -13,7 +13,7 @@ extensions = [
 ]
 
 html_theme = 'sphinx_rtd_theme'
-
+master_doc = 'index'
 # Versioning Config
 smv_tag_whitelist = r'^v\d+\.\d+\.\d+$'
 smv_branch_whitelist = r'^master$'
