@@ -1,34 +1,28 @@
-
----
-
-## ✅ `index.rst` (reStructuredText)
-
-Save this inside your `docs/` folder as `index.rst`.
-
-```rst
-Welcome to My Project's Documentation
+Welcome to MyProject's documentation!
 =====================================
 
-This is the documentation for **My Project**.
+.. panels::
+   :container: container-lg
+   :column: 1 1 1
+   :card: +shadow +hover +border
 
-Features
---------
+   .. card:: 🚀 Installation
+      :link: install
+      :link-type: doc
+      :class-card: bg-light text-center
 
-- Easy to use
-- Fast and efficient
-- Open source
+      Step-by-step instructions to get started.
 
-Getting Started
----------------
+   .. card:: 🛠️ User Guide
+      :link: guide
+      :link-type: doc
+      :class-card: bg-light text-center
 
-To get started, clone the repository and follow the instructions in the README:
+      Learn how to configure and use the system.
 
-.. code-block:: bash
+   .. card:: 🧾 Changelog
+      :link: changelog
+      :link-type: doc
+      :class-card: bg-light text-center
 
-    git clone https://github.com/your-user/your-repo.git
-    cd your-repo
-
-License
--------
-
-MIT License
+      See what's changed in each release.
