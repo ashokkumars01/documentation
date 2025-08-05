@@ -45,42 +45,43 @@
 #           # destination_dir: releases
 
 
-name: Deploy Documentation
+name: Deploy Sphinx Docs to GitHub Pages
 
 on:
   push:
     tags:
-      - 'v*'        # For versioned docs like v1.0.0
+      - 'v*.*.*'
     branches:
-      - main        # For latest version
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # required to get tags and history
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -U pip
+          pip install sphinx sphinx-rtd-theme sphinx-multiversion sphinx-design
 
-      - name: Build HTML using Sphinx Multiversion
+      - name: Build with sphinx-multiversion
         run: |
           sphinx-multiversion docs build/html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/html
+
 
