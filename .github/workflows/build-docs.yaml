@@ -5,7 +5,7 @@ on:
     tags:
       - 'v*'      # versioned builds (e.g., v1.0.0)
     branches:
-      - main      # build latest docs from main
+      - release      # build latest docs from main
 
 jobs:
   build-and-deploy:
