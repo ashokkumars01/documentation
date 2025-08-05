@@ -8,6 +8,7 @@ html_theme_options = {
 extensions = [
     'sphinx_multiversion',
 ]
+master_doc = 'index'
 
 # Optional: Use this to skip unwanted tags/branches
 smv_tag_whitelist = r'^v\d+\.\d+\.\d+$'
