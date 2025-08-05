@@ -4,8 +4,8 @@ on:
   push:
     tags:
       - 'v*'      # versioned builds (e.g., v1.0.0)
-    branches:
-      - release      # build latest docs from main
+    # branches:
+    #   - release      # build latest docs from main
 
 jobs:
   build-and-deploy:
