@@ -1,4 +1,6 @@
-sphinx
-sphinx-rtd-theme
 sphinx-multiversion
-sphinx-panels
+sphinx
+furo
+myst-parser
+
+
