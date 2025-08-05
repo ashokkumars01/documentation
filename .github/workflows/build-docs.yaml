@@ -33,7 +33,7 @@ jobs:
           poetry run pip install sphinx sphinx-rtd-theme myst-parser sphinx-multiversion
 
       - name: Build HTML (latest or tag)
-        working-directory: documentation/Doc
+        working-directory: Doc
         run: |
           poetry run sphinx-multiversion . _build/html
 
