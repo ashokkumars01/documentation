@@ -76,7 +76,7 @@ jobs:
 
       - name: Build HTML using Sphinx Multiversion
         run: |
-          sphinx-multiversion Doc build/html
+          sphinx-multiversion docs build/html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
