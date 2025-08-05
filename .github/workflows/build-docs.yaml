@@ -1,35 +1,41 @@
-name: Build and Deploy Sphinx Docs
+name: Build and Deploy Docs
 
 on:
   push:
-    branches: [master]
-    tags: ['v*']
+    branches:
+      - main
+    tags:
+      - 'v*'
 
 jobs:
-  docs:
+  build-docs:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Doc
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install poetry
+          poetry install
+          poetry run pip install sphinx sphinx-rtd-theme myst-parser sphinx-multiversion
 
-      - name: Build HTML using sphinx-multiversion
+      - name: Build HTML (latest or tag)
         run: |
-          sphinx-multiversion docs/source docs/_build/html
+          poetry run sphinx-build -b html . _build/html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
+          publish_dir: ./Doc/_build/html
+          destination_dir: ${{ github.ref_type == 'tag' && github.ref_name || 'latest' }}
