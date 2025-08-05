@@ -28,8 +28,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Build docs with Sphinx-Multiversion
+      working-directory: Doc
       run: |
-        cd Doc
         sphinx-multiversion . _build/html
 
     - name: Deploy to GitHub Pages
