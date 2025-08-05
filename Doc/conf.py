@@ -11,6 +11,7 @@ extensions = [
     'sphinx_rtd_theme',         # for nice layout
     'sphinx_multiversion',      # for versioned docs
 ]
+master_doc = 'index'
 
 html_theme = 'sphinx_rtd_theme'
 master_doc = 'index'

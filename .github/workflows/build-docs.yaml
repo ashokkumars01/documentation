@@ -34,6 +34,7 @@ jobs:
 
       - name: Build HTML (latest or tag)
         run: |
+          cd Doc
           poetry run sphinx-multiversion . _build/html
 
       - name: Deploy to GitHub Pages
