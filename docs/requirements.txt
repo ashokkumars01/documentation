@@ -1,6 +1,0 @@
-sphinx-multiversion
-sphinx
-furo
-myst-parser
-
-
