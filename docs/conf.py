@@ -3,7 +3,6 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 
 extensions = [
-    'myst_parser',
     'sphinx_rtd_theme',
     'sphinx_multiversion',
     'sphinx_panels',
